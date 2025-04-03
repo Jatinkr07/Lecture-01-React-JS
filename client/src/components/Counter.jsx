@@ -1,20 +1,20 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 const Counter = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(10);
+  const handleIncrease = () => {
+    setCount(count + 1);
+  };
+  const handleDecrease = () => {
+    setCount(count - 1);
+  };
   return (
-    <div className="flex gap-8 justify-center">
-      <button
-        className="px-3 py-2 border-2 bg-blue-500"
-        onClick={() => setCount(count - 1)}
-      >
-        decrease
+    <div>
+      <button className="p-3" onClick={handleDecrease}>
+        Decreese
       </button>
-      <h1 className="bg-emerald-400 p-2 rounded-full">Count : {count}</h1>
-      <button
-        className="px-3 py-2 border-2 bg-blue-500"
-        onClick={() => setCount(count + 1)}
-      >
+      <h1>Count : {count}</h1>
+      <button className="p-3" onClick={handleIncrease}>
         Increase
       </button>
     </div>
